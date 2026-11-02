@@ -1,0 +1,129 @@
+CONSIGNES DU PROJET
+
+		Organisation des fichiers
+SVP, ne modifiez pas les noms des dossiers fp1, fp2, fp3 (fanpage1, fanpage2, fanpage3).
+	C'est pour conserver une navigation facile.
+
+SVP, ne modifiez pas le nom des fichiers fanpage.html.
+	C'est une consigne du projet.
+
+Essayons au maximum d'utiliser des noms de fichiers en anglais.
+	Ne me tapez pas, c'est aussi une consigne du projet !
+
+Vous pouvez modifier les fichiers qui ne sont pas dans votre dossier attitré.
+	Attention : prévenez dans le chat de groupe si vous le faites, et expliquez pourquoi.
+
+_____________________________________________________________________________________
+
+Organisation du travail
+
+Chaque personne possède son dossier attitré :
+
+Personne 1 : fp1/
+Personne 2 : fp2/
+Personne 3 : fp3/
+
+IMPORTANT : pendant la première phase du projet, on évite de modifier index.html. Chacun se concentre sur sa propre Fanpage.
+
+L'index sera modifié ensemble dans un second temps.
+
+
+_________________________________________________________________________________________
+
+GITHUB
+		1. Pour démarrer (une seule fois)
+
+Ouvrez le dossier dans lequel vous souhaitez installer le projet.
+
+Clic droit → Open Git Bash Here (afficher d'autres options si besoin).
+
+Tapez :
+
+bash
+git clone https://github.com/adrienplateforme/fanpage.git
+
+
+Voilà ! Vous avez créé votre dossier de travail local.
+
+
+		2. Avant de commencer à travailler (IMPORTANT)
+
+À chaque nouvelle session de travail, récupérez les dernières modifications du projet :
+
+bash
+git pull --rebase
+
+
+Cela permet de travailler sur une version à jour du projet.
+
+
+		3. Vous souhaitez modifier le projet ?
+
+Vérifiez d'abord les fichiers modifiés :
+
+bash
+git status
+
+
+Ajoutez vos modifications à la liste des fichiers à enregistrer.
+
+Pour ajouter un fichier précis :
+
+bash
+git add fp1/fanpage.html
+
+
+Pour ajouter tout votre dossier :
+
+bash
+git add fp1/
+
+
+Attention : remplacez fp1/ par votre dossier attitré.
+
+		
+		Enregistrez vos modifications :
+
+bash
+git commit -m "Prenom - description de la contribution"
+
+
+On met notre prénom en premier pour savoir qui fait quoi SVP :)
+
+
+
+
+		4. Envoyer son travail sur GitHub
+bash
+git push
+
+
+Si Git refuse le push, ne paniquez pas et ne forcez surtout pas avec git push --force.
+
+Récupérez d'abord les dernières modifications :
+
+bash
+git pull --rebase
+
+
+Puis réessayez :
+
+bash
+git push
+
+
+Si un conflit apparaît, prévenez le groupe avant de faire des manipulations.
+
+
+
+		5. Vérifier que tout est bon
+bash
+git status
+
+
+Vous pouvez voir notamment :
+
+Your branch is up to date with 'origin/main' : votre branche est à jour.
+nothing to commit, working tree clean : vous n'avez plus de modifications locales non enregistrées.
+
+Bon courage à tous et bon développement !
