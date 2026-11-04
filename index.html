@@ -6,14 +6,14 @@
 
     <title>Accueil Fan Page</title>
 
-    <link rel="stylesheet" href="fanpage1.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
 
   <body>
     <header>
       
-      <h3>Nom du groupe</h3>
+      <h3>The ONLY<br><span>True FANS</span></h3>
       
       <nav>
         <a href="index.html">Page d'accueil</a>
@@ -22,16 +22,47 @@
         <a href="./fp3/fanpage3.html">Page de fan 3</a>
       </nav>
 
-      <button id="bouton-musique" type="button" aria-label="Activer le son">▶️</button>
+      <section>
 
-      <audio id="vh-jump" preload="none">
-        <source src="Van Halen - Jump (Official Music Video).mp3" type="audio/mpeg"> <!-- audio/mpeg => MP3-->
-      </audio>
+        <span id="texte-musique">
+          <span id="action-musique">Activer</span> le son
+        </span>
+        
+        <button id="bouton-musique" type="button" aria-label="Activer le son">
+          <img src="play.png" alt="bouton play">
+        </button>
 
+        <audio id="vh-jump" preload="none">
+          <source src="Van Halen - Jump (Official Music Video).mp3" type="audio/mpeg">
+        </audio>
+      </section>
 
     </header>
 
-    <main></main>
+    <main>
+
+      <section id="postheader">
+        <h1>Nom du groupe</h1>
+        <h2>phrase d'accroche</h2>
+        <h3>phrase d'intro</h3>
+      </section>
+
+      <h4>DÉCOUVRE LE PARCOURS DE TROIS JOUEURS D'EXECPTION</h4>
+
+      <section id="players">
+        <img src="" alt="Joueur 1">
+        <img src="" alt="Joueur 2">
+        <img src="" alt="Joueur 3">
+      </section>
+
+      <article id="whoiam">
+        <img src="" alt="Photo des fans">
+        <h2>DERRIÈRE LES TRIBUNES</h2>
+        blablabla
+
+      </article>
+
+    </main>
     
     <footer>
       
