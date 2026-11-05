@@ -13,7 +13,7 @@
   <body>
     <header>
       
-      <h3>The ONLY<br><span>True FANS</span></h3>
+      <h3 class="logo-titre">The ONLY<br><span>True FANS</span></h3>
       
       <nav>
         <a href="index.html">ACCUEIL</a>
@@ -44,32 +44,40 @@
         <img src="stadium.png" alt="Un stade de football illuminé la nuit">
 
         <div>
-          <h1 id="titre-principal">The ONLY<br><span>True FANS</span></h1>
-          <p>TROIS JOUEURS, TROIS LÉGENDES</p>
-          <p>AU PLUS PRES DE NOS STARS, PAR L'AMOUR DU BEAU JEU</p>
+          <h1 id="titre-principal" class="logo-titre">The ONLY<br><span>True FANS</span></h1>
+          <p>TROIS <span>JOUEURS</span>, TROIS <span>LÉGENDES</span></p>
+          <p>AU PLUS PRÈS DE NOS STARS, PAR L'<span>AMOUR</span> DU MAILLOT ET DU BEAU JEU.</p>
         </div>
       </section>
 
      <section id="players" aria-labelledby="titre-joueurs">
       <h2 id="titre-joueurs">DÉCOUVRE LE PARCOURS DE TROIS JOUEURS D'EXCEPTION</h2>
 
-      <article>
-        <a href="./fp1/fanpage1.html">
-             <span class="numero-joueur" aria-hidden="true">01</span>
-          <img src="cr7_index.png" alt="Cristiano Ronaldo">
-          <h3>CRISTIANO RONALDO</h3>
-          <p class="accroche-joueur">LA DISCIPLINE. LE TRAVAIL. LA LÉGENDE.</p>
-          <p class="lien-carriere">DÉCOUVRIR SA CARRIÈRE</p>
-        </a>
-      </article>
+<article>
+  <a href="./fp1/fanpage1.html">
+    <span class="numero-joueur" aria-hidden="true">01</span>
+    <img src="cr7_index.png" alt="Cristiano Ronaldo">
+
+    <div class="infos-joueur">
+      <h3>CRISTIANO<br>RONALDO</h3>
+      <p class="accroche-joueur">
+        LA DISCIPLINE. LE TRAVAIL. LA LÉGENDE.
+      </p>
+      <p class="lien-carriere">DÉCOUVRIR SA CARRIÈRE</p>
+    </div>
+  </a>
+</article>
 
     <article>
       <a href="./fp2/fanpage2.html">
          <span class="numero-joueur" aria-hidden="true">02</span>
         <img src="mbappe_index.png" alt="Kylian Mbappé">
-        <h3>KYLLIAN MBAPPÉ</h3>
+
+        <div class="infos-joueur">
+        <h3>KYLLIAN<br>MBAPPÉ</h3>
         <p class="accroche-joueur">LA VITESSE. LE TALENT. L’AVENIR.</p>
         <p class="lien-carriere">DÉCOUVRIR SA CARRIÈRE</p>
+        </div>
       </a>
     </article>
 
@@ -77,33 +85,81 @@
       <a href="./fp3/fanpage3.html">
          <span class="numero-joueur" aria-hidden="true">03</span>
         <img src="haaland_index.png" alt="Erling Haaland">
-        <h3>ERLING HAALAND</h3>
+
+        <div class="infos-joueur">
+        <h3>ERLING<br>HAALAND</h3>
         <p class="accroche-joueur">LA PUISSANCE. L’EFFICACITÉ. L’INSTINCT.</p>
         <p class="lien-carriere">DÉCOUVRIR SA CARRIÈRE</p>
+        </div>
       </a>
     </article>
   </section>
 
-  <section id="whoiam" aria-labelledby="titre-fans">
-    <img src="fans.png" alt="Des fans regardent un match depuis les tribunes">
+<section id="whoiam" aria-labelledby="titre-fans">
+  <h2 id="titre-fans">DERRIÈRE LES TRIBUNES</h2>
+  
+  <img src="fans.png" alt="Des supporters réunis dans les tribunes">
 
-    <div>
-      <h2 id="titre-fans">DERRIÈRE LES TRIBUNES</h2>
-      <p>Au cœur du football, il y a les joueurs… et ceux qui vibrent pour eux. Ce site est né de notre passion pour Cristiano Ronaldo, Kylian Mbappé et Erling Haaland : trois parcours exceptionnels, trois joueurs qui nous font rêver, et une même envie de partager ce qui nous rassemble — l’amour du football.</p>
-    </div>
-  </section>
+  <div>
+
+    <p>
+      Au cœur du football, il y a les joueurs… et ceux qui vibrent pour eux.
+      Dans les tribunes, les supporters se rassemblent, chantent et partagent
+      la même ferveur. Partout dans le monde, cette passion crée des liens
+      uniques et fait naître des souvenirs inoubliables : l’exultation d’un but,
+      l’espoir d’une victoire, l’émotion de chaque match.
+    </p>
+
+    <p>
+      Ilyess, Marwan et Adrien sont heureux de vous accueillir sur leur site
+      pour partager cette passion et faire vivre, ensemble, l’histoire de
+      nos légendes.
+    </p>
+  </div>
+</section>
 
 </main>
     
-    <footer>
-      
-      <nav>
-        <a href="index.html">Accueil</a>
-        <a href="./fp1/fanpage1.html">Cristiano Ronaldo</a>
-        <a href="./fp2/fanpage2.html">Kylian Mbappé</a>
-        <a href="./fp3/fanpage3.html">Erling Haaland</a>
-      </nav>
+<footer>
+  <div class="footer-identite">
+    <h2>The Only<br>True Fans</h2>
+    <p>Adrien Ilyess Marwan</p>
+  </div>
 
-    </footer>
+  <nav aria-label="Navigation de pied de page">
+    <h2>Navigation</h2>
+      <a href="index.html">Accueil</a>
+      <a href="./fp1/fanpage1.html">Cristiano Ronaldo</a>
+      <a href="./fp2/fanpage2.html">Kylian Mbappé</a>
+      <a href="./fp3/fanpage3.html">Erling Haaland</a>
+  </nav>
+
+  <section class="footer-reseaux" aria-labelledby="titre-reseaux">
+    <h2 id="titre-reseaux">Suivez-nous</h2>
+    <a href="https://github.com/adrienplateforme/fanpage">GitHub</a>
+  </section>
+
+<section class="footer-musique" aria-labelledby="titre-musique-footer">
+  <h2 id="titre-musique-footer">Musique du site</h2>
+
+  <img src="jump.png" alt="Pochette du single Jump de Van Halen">
+
+  <div>
+    <p>Jump</p>
+    <p>Van Halen</p>
+  </div>
+
+  <div class="footer-commande-musique">
+    <button
+      id="bouton-musique-footer"
+      type="button"
+      aria-label="Activer le son"
+    >
+      <img src="play.png" alt="">
+    </button>
+  </div>
+</section>
+</footer>
+
   </body>
 </html>
