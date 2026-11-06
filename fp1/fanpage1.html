@@ -12,9 +12,9 @@
 
   <body>
     <header>
-      
+
       <h3 class="logo-titre">The ONLY<br><span>True FANS</span></h3>
-      
+
       <nav>
         <a href="../index.html">ACCUEIL</a>
         <a href="fanpage1.html">RONALDO</a>
@@ -27,7 +27,7 @@
         <span id="texte-musique">
           <span id="action-musique">Activer</span> le son
         </span>
-        
+
         <button id="bouton-musique" type="button" aria-label="Activer le son">
           <img src="../play.png" alt="bouton play">
         </button>
@@ -40,64 +40,70 @@
     </header>
 
     <main>
-  <section class="presentation-joueur">
-    <div class="presentation-texte">
-      <p class="fil-ariane">ACCUEIL > CRISTIANO RONALDO</p>
+      <section class="presentation-joueur">
+        <div class="presentation-texte">
+          <!-- "ACCUEIL" est un lien ; la suite est masquée sur mobile -->
+          <p class="fil-ariane">
+            <a href="../index.html">ACCUEIL</a><span class="fil-suite"> > CRISTIANO RONALDO</span>
+          </p>
 
-      <p class="presentation-surnom">
-        LE JOUEUR QUI A MARQUÉ PLUSIEURS GÉNÉRATIONS
-      </p>
+          <p class="presentation-surnom">
+            LE JOUEUR QUI A MARQUÉ PLUSIEURS GÉNÉRATIONS
+          </p>
 
-      <h1>CRISTIANO<br>RONALDO</h1>
+          <h1>CRISTIANO<br>RONALDO</h1>
 
-      <p class="accroche-joueur">
-        LA DISCIPLINE. LE TRAVAIL. LA LÉGENDE.
-      </p>
+          <p class="accroche-joueur">
+            LA DISCIPLINE. LE TRAVAIL. LA LÉGENDE.
+          </p>
 
-      <p>
-        De Madère au sommet du football mondial,<br>
-        l’histoire d’un joueur qui a repoussé toutes les limites.
-      </p>
-    </div>
+          <p>
+            De Madère au sommet du football mondial,
+            l’histoire d’un joueur qui a repoussé toutes les limites.
+          </p>
+        </div>
 
-    <div class="statistiques-rapides">
-      <p><strong>980+</strong> BUTS EN CARRIÈRE</p>
-      <p><strong>1 300+</strong> MATCHS JOUÉS</p>
-      <p><strong>5</strong> BALLONS D’OR</p>
-      <p><strong>35</strong> TROPHÉES</p>
-    </div>
-  </section>
+        <div class="statistiques-rapides">
+          <p><strong>980+</strong> BUTS EN CARRIÈRE</p>
+          <p><strong>1 300+</strong> MATCHS JOUÉS</p>
+          <p><strong>5</strong> BALLONS D’OR</p>
+          <p><strong>35</strong> TROPHÉES</p>
+        </div>
+      </section>
 
-  </section>
-<nav class="navigation-joueur" aria-label="Sections du joueur">
-  <button type="button" class="onglet actif" data-section="parcours">Parcours</button>
-  <button type="button" class="onglet" data-section="palmares">Palmarès</button>
-  <button type="button" class="onglet" data-section="stats">Stats</button>
-  <button type="button" class="onglet" data-section="galerie">Galerie</button>
-</nav>
+      <nav class="navigation-joueur" aria-label="Sections du joueur">
+        <button type="button" class="onglet actif" data-section="bio">Biographie</button>
+        <button type="button" class="onglet" data-section="parcours">Parcours</button>
+        <button type="button" class="onglet" data-section="stats">Stats</button>
+        <button type="button" class="onglet" data-section="galerie">Galerie</button>
+        <a class="onglet onglet-retour" href="../index.html">Retour à l’accueil</a>
+      </nav>
 
-<section class="contenu-onglet actif" id="parcours">
-  <img src="parcours.png" alt="la liste des clubs depuis ses debuts">
-</section>
+      <section class="contenu-onglet actif" id="bio">
+        <img src="bio.png" alt="biographie de cristiano ronaldo">
+      </section>
 
-<section class="contenu-onglet" id="palmares" hidden>
-  <h2>Palmarès</h2>
-  <p>On ajoutera ici ses titres et récompenses.</p>
-</section>
+      <section class="contenu-onglet" id="parcours" hidden>
+        <img src="parcours.png" alt="parcours en club pro de ronaldo">
+      </section>
 
-<section class="contenu-onglet" id="stats" hidden>
-  <h2>Statistiques</h2>
-  <p>On ajoutera ici ses statistiques.</p>
-</section>
+      <section class="contenu-onglet" id="stats" hidden>
+        <img src="stats.png" alt="statistiques de cristiano ronaldo">
+      </section>
 
-<section class="contenu-onglet" id="galerie" hidden>
-  <h2>Galerie</h2>
-  <p>On ajoutera ici ses photos.</p>
-</section>
-</main>
-    
+      <section class="contenu-onglet" id="galerie" hidden>
+        <h2>GALERIE</h2>
+        <img src="cr7-1.jpg" alt="retournée acrobatique">
+        <img src="cr7-2.jpg" alt="soulier d'or">
+        <img src="cr7-3.jpg" alt="ballon d'or">
+        <img src="cr7-4.jpg" alt="coupe euro">
+      </section>
+
+      <!-- visible seulement sur mobile -->
+      <a class="bouton-retour" href="../index.html">RETOUR À L’ACCUEIL</a>
+    </main>
+
     <footer>
-      
       <nav>
         <a href="../index.html">ACCUEIL</a>
         <a href="fanpage1.html">RONALDO</a>
@@ -107,4 +113,3 @@
     </footer>
   </body>
 </html>
-

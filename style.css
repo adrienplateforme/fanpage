@@ -1,14 +1,362 @@
+/* =========================================================
+   MOBILE FIRST
+   Base = mobile (sans header ni footer)
+   @media (min-width: 768px) = tablette / desktop
+   ========================================================= */
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
 }
+
+/* Header et footer cachés sur mobile (la musique aussi) */
+header,
+footer {
+  display: none;
+}
+
+main {
+  background-color: black;
+  color: white;
+}
+
+/* ---------- Hero ---------- */
+
+#postheader {
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+#postheader img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* voile sombre pour lire le texte sur la photo */
+#postheader::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgb(0 0 0 / 55%);
+}
+
+#postheader div {
+  position: relative;
+  z-index: 1;
+  padding: 30px 24px;
+  text-shadow: 0 2px 8px black;
+}
+
+#postheader h1 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.5rem, 12vw, 4rem);
+}
+
+#postheader p {
+  margin: 10px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+#postheader p span {
+  color: #ffd21f;
+}
+
+/* ---------- Logo (utilisé par le h1) ---------- */
+
+.logo-titre {
+  margin: 0;
+  color: white;
+  font-size: 1.4rem;
+  line-height: 0.85;
+}
+
+.logo-titre span {
+  display: inline-block;
+  margin-left: 0.35em;
+}
+
+/* ---------- Joueurs : 1 colonne ---------- */
+
+#players {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 32px 16px;
+}
+
+#titre-joueurs {
+  margin: 0 0 8px;
+  color: #ffd21f;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+#players article a {
+  position: relative;
+  display: block;
+  height: 440px;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  color: white;
+  text-decoration: none;
+  background-color: #1c1c1c;
+}
+
+#players article img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+#players article a::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 38% 0 0;
+  background: linear-gradient(transparent, rgb(0 0 0 / 92%));
+}
+
+.numero-joueur {
+  position: absolute;
+  z-index: 1;
+  top: 14px;
+  left: 16px;
+  color: #ffd21f;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.infos-joueur {
+  position: absolute;
+  z-index: 1;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+}
+
+#players article h3 {
+  margin: 0 0 10px;
+  font-size: 1.75rem;
+  line-height: 0.95;
+  text-align: left;
+}
+
+.accroche-joueur {
+  margin: 0 0 14px;
+  color: #ffd21f;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* zone tactile >= 44px */
+.lien-carriere {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 16px;
+  box-sizing: border-box;
+  color: black;
+  background-color: #ffd21f;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* ---------- Derrière les tribunes : 1 colonne ---------- */
+
+#whoiam {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px 16px 48px;
+}
+
+#titre-fans {
+  margin: 0;
+  color: #ffd21f;
+  font-size: 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#whoiam img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+#whoiam p {
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+/* ---------- Styles internes du header (visibles seulement en desktop) ---------- */
 
 header h3,
 header section {
-    flex: 1;
+  flex: 1;
 }
 
-header {
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+header nav a:first-child {
+  color: yellow;
+}
+
+header section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+#texte-musique {
+  color: white;
+  font-size: 1.05rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+#action-musique {
+  color: yellow;
+}
+
+#bouton-musique {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+#bouton-musique img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---------- Styles internes du footer ---------- */
+
+footer h2 {
+  margin: 0 0 12px;
+  color: #ffd21f;
+  font-size: 1.1rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffd21f;
+}
+
+footer nav,
+.footer-identite,
+.footer-reseaux {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.footer-identite p {
+  margin: 0;
+}
+
+.footer-musique {
+  display: grid;
+  grid-template-columns: 100px auto;
+  gap: 8px 20px;
+}
+
+.footer-musique h2 {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin: 0;
+}
+
+.footer-musique > img {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.footer-musique > div {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.footer-musique > div p {
+  margin: 0 0 6px;
+}
+
+.footer-commande-musique {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: end;
+}
+
+.footer-commande-musique button {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.footer-commande-musique button img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* =========================================================
+   TABLETTE / DESKTOP (>= 768px)
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  /* le header et le footer reviennent */
+  header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,245 +366,9 @@ header {
     background-color: black;
     color: white;
     font-weight: bold;
-}
+  }
 
-.logo-titre {
-    margin: 0;
-    color: white;
-    font-size: 1.4rem;
-    line-height: 0.85;
-}
-
-.logo-titre span {
-    display: inline-block;
-    margin-left: 0.35em;
-}
-
-header nav {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-}
-
-header nav a {
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1rem;
-    white-space: nowrap;
-}
-
-header nav a:first-child {
-    color: yellow;
-}
-
-header section {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 5px;
-}
-
-#texte-musique {
-    color: white;
-    font-size: 1.05rem;
-    font-weight: bold;
-    white-space: nowrap;
-}
-
-#action-musique {
-    color: yellow;
-}
-
-#bouton-musique {
-    width: 34px;
-    height: 34px;
-    padding: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
-
-#bouton-musique img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-main {
-    background-color: black;
-    color: white;
-}
-
-#postheader {
-    position: relative;
-    min-height: 300px;
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-}
-
-#postheader img {
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#postheader div {
-    position: relative;
-    z-index: 1;
-    padding: 30px 20px;
-    text-shadow: 0 2px 8px black;
-}
-
-#postheader h1 {
-    margin: 0 0 2rem;
-    font-size: clamp(2rem, 6vw, 4rem);
-}
-
-#postheader p {
-    margin: 10px 0 0;
-}
-
-#postheader p span {
-    color: #ffd21f;
-}
-
-#players {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 24px 20px;
-}
-
-#titre-joueurs {
-    grid-column: 1 / -1;
-    margin: 0 0 8px;
-    color: #ffd21f;
-    text-align: center;
-}
-
-#players article a {
-    position: relative;
-    display: block;
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-    padding: 10px;
-    box-sizing: border-box;
-
-    color: white;
-    text-decoration: none;
-    background-color: black;
-    border: 1px solid black;
-}
-
-#players article a img {
-    transition: transform 0.5s ease;
-}
-
-#players article a:hover img {
-    transform: scale(1.4);
-}
-
-#players article img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#players article a::after {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    inset: 40% 0 0;
-    background: linear-gradient(transparent, rgb(0 0 0 / 90%));
-}
-
-.numero-joueur {
-    position: absolute;
-    z-index: 1;
-    top: 10px;
-    left: 12px;
-    color: #ffd21f;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.infos-joueur {
-    position: absolute;
-    z-index: 1;
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
-    text-align: center;
-}
-
-#players article h3 {
-    margin: 0 0 1rem;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    line-height: 0.95;
-    text-align: left;
-}
-
-.accroche-joueur {
-    margin: 0 0 10px;
-    color: #ffd21f;
-    font-size: clamp(0.55rem, 1vw, 0.75rem);
-    font-weight: bold;
-}
-
-.lien-carriere {
-    display: inline-block;
-    padding: 7px 10px;
-    color: black;
-    background-color: #ffd21f;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-#whoiam {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 24px 20px;
-}
-
-#titre-fans {
-    grid-column: 1 / -1;
-    margin: 0;
-    color: #ffd21f;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-#whoiam img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-}
-
-#whoiam p {
-    margin: 0 0 12px;
-    line-height: 1.6;
-}
-
-footer {
+  footer {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -266,83 +378,92 @@ footer {
     padding: 24px;
     background-color: black;
     color: white;
-}
+  }
 
-footer h2 {
-    margin: 0 0 12px;
-    color: #ffd21f;
-    font-size: 1.1rem;
-}
+  /* hero plus bas */
+  #postheader {
+    min-height: 300px;
+  }
 
-footer a {
-    color: white;
-    text-decoration: none;
-}
+  #postheader::after {
+    background: rgb(0 0 0 / 35%);
+  }
 
-footer a:hover {
-    color: #ffd21f;
-}
+  #postheader h1 {
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
 
-footer nav,
-.footer-identite,
-.footer-reseaux {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-}
+  #postheader p {
+    font-size: 1rem;
+  }
 
-.footer-identite p {
-    margin: 0;
-}
+  /* joueurs : 3 colonnes */
+  #players {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 20px;
+  }
 
-.footer-musique {
-    display: grid;
-    grid-template-columns: 100px auto;
-    gap: 8px 20px;
-}
-
-.footer-musique h2 {
+  #titre-joueurs {
     grid-column: 1 / -1;
-    grid-row: 1;
-    margin: 0;
-}
+    font-size: 1.5rem;
+  }
 
-.footer-musique > img {
-    grid-column: 1;
-    grid-row: 2;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-}
+  #players article a {
+    height: auto;
+    aspect-ratio: 3 / 4;
+    padding: 10px;
+    background-color: black;
+  }
 
-.footer-musique > div {
-    grid-column: 2;
-    grid-row: 2;
-}
+  #players article a:hover img {
+    transform: scale(1.4);
+  }
 
-.footer-musique > div p {
-    margin: 0 0 6px;
-}
+  .numero-joueur {
+    top: 10px;
+    left: 12px;
+  }
 
-.footer-commande-musique {
-    grid-column: 2;
-    grid-row: 2;
-    align-self: end;
-}
+  .infos-joueur {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    text-align: center;
+  }
 
-.footer-commande-musique button {
-    width: 34px;
-    height: 34px;
-    padding: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
+  #players article h3 {
+    margin-bottom: 1rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+  }
 
-.footer-commande-musique button img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  .accroche-joueur {
+    margin-bottom: 10px;
+    font-size: clamp(0.55rem, 1vw, 0.75rem);
+  }
+
+  .lien-carriere {
+    min-height: 0;
+    padding: 7px 10px;
+    font-size: 0.8rem;
+  }
+
+  /* tribunes : 2 colonnes */
+  #whoiam {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 20px;
+  }
+
+  #titre-fans {
+    grid-column: 1 / -1;
+  }
+
+  #whoiam img {
+    height: 280px;
+  }
 }

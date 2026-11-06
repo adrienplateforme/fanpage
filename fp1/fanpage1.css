@@ -1,18 +1,260 @@
-header h3,
-header section {
-    flex: 1;
+/* =========================================================
+   FANPAGE 1 - MOBILE FIRST
+   Base = mobile (sans header ni footer)
+   @media (min-width: 768px) = tablette / desktop
+   ========================================================= */
+
+:root {
+  --fond: #000000;
+  --texte: #ffffff;
+  --texte-secondaire: #ffffff;
+  --or: #ffd21f;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
+* {
+  box-sizing: border-box;
+}
 
-    padding: 10px 20px;
-    background-color: black;
-    color: white;
-    font-weight: bold;
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  background-color: var(--fond);
+  color: var(--texte);
+}
+
+/* Header et footer cachés sur mobile (la musique aussi) */
+header,
+footer {
+  display: none;
+}
+
+/* ---------- Hero (mobile) ---------- */
+
+.presentation-joueur {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* photo + dégradé, uniquement sur la hauteur du hero */
+.presentation-joueur::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 560px;
+  z-index: 0;
+  background:
+    linear-gradient(transparent 25%, rgb(0 0 0 / 95%) 100%),
+    url("cr7.png") center top / cover no-repeat,
+    #1c1c1c;
+}
+
+.presentation-texte {
+  position: relative;
+  z-index: 1;
+  min-height: 560px;
+  padding: 0 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* le fil d'Ariane devient un bouton retour "← ACCUEIL" */
+.fil-ariane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.fil-ariane a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 16px;
+  color: var(--texte-secondaire);
+  text-decoration: none;
+}
+
+.fil-ariane a::before {
+  content: "←";
+  margin-right: 6px;
+  color: var(--or);
+  font-size: 1.2rem;
+}
+
+.fil-suite {
+  display: none;
+}
+
+.presentation-surnom {
+  margin: 0 0 10px;
+  color: var(--or);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1.4;
+}
+
+.presentation-texte h1 {
+  margin: 0;
+  font-size: clamp(44px, 14vw, 94px);
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.accroche-joueur {
+  margin: 18px 0;
+  color: var(--or);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.presentation-texte > p:last-child {
+  margin: 0;
+  color: #d0d2d0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ---------- Stats rapides : 2 x 2 ---------- */
+
+.statistiques-rapides {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid #333;
+}
+
+.statistiques-rapides p {
+  margin: 0;
+  padding: 22px 12px;
+  border-top: 1px solid #333;
+  color: var(--texte-secondaire);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.statistiques-rapides p:nth-child(even) {
+  border-left: 1px solid #333;
+}
+
+.statistiques-rapides strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--or);
+  font-size: 30px;
+  letter-spacing: 0;
+}
+
+/* ---------- Onglets : barre sur toute la largeur ---------- */
+
+.navigation-joueur {
+  display: flex;
+  border-bottom: 1px solid #333;
+}
+
+.navigation-joueur .onglet {
+  flex: 1;
+  min-height: 48px;
+  padding: 0 4px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #c8c8c8;
+  font: inherit;
+  font-size: 0.875rem;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.navigation-joueur .onglet:hover {
+  color: #fff;
+}
+
+.navigation-joueur .onglet.actif {
+  border-bottom-color: var(--or);
+  color: var(--or);
+}
+
+/* le lien retour est dans la barre seulement en desktop */
+.navigation-joueur .onglet-retour {
+  display: none;
+}
+
+/* ---------- Contenu des onglets ---------- */
+
+.contenu-onglet {
+  padding: 24px 16px;
+}
+
+.contenu-onglet[hidden] {
+  display: none;
+}
+
+.contenu-onglet > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Galerie : 2 colonnes sur mobile */
+#galerie:not([hidden]) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+#galerie h2 {
+  grid-column: 1 / -1;
+  margin: 0 0 4px;
+  color: var(--or);
+}
+
+#galerie img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ---------- Bouton retour en bas (mobile) ---------- */
+
+.bouton-retour {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  margin: 8px 16px 56px;
+  background: var(--or);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ---------- Styles internes du header (visibles seulement en desktop) ---------- */
+
+header h3,
+header section {
+  flex: 1;
 }
 
 .logo-titre {
@@ -27,218 +269,215 @@ header {
   margin-left: 0.35em;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    flex: 0 0 auto;
+header nav,
+footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex: 0 0 auto;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1rem;
-    white-space: nowrap;
+header nav a,
+footer nav a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
-nav a:nth-child(2) {
-    color: yellow;
+header nav a:nth-child(2) {
+  color: yellow;
 }
 
 header section {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
 }
 
 #texte-musique {
-    color: white;
-    font-size: 1.05rem;
-    font-weight: bold;
-    white-space: nowrap;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 #action-musique {
-    color: yellow;
+  color: yellow;
 }
 
 #bouton-musique {
-    width: 34px;
-    height: 34px;
-    padding: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
-
-#bouton-musique img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-main {
-  --fond: #000000;
-  --fond-secondaire: #ffffff;
-  --texte: #ffffff;
-  --texte-secondaire: #ffffff;
-  --or: #ffd21f;
-
-  background-color: var(--fond);
-  color: var(--texte);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: var(--fond);
-  color: var(--texte);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.presentation-joueur {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: minmax(480px, auto) auto;
-  gap: 30px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 70px 7%;
-  overflow: hidden;
-  background:
-    url("cr7.png") center / cover no-repeat,
-    radial-gradient(ellipse at 75% 35%, #20292c 0, transparent 45%),
-    linear-gradient(120deg, #05090b, #0b1114);
-}
-
-.presentation-texte {
-  z-index: 1;
-  align-self: center;
-  max-width: 560px;
-}
-
-.fil-ariane {
-  margin: 0 0 55px;
-  color: var(--texte-secondaire);
-  font-size: 12px;
-  letter-spacing: 2px;
-}
-
-.presentation-surnom {
-  margin: 0 0 14px;
-  color: var(--or);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-
-.presentation-texte h1 {
-  margin: 0;
-  font-size: clamp(48px, 7vw, 94px);
-  line-height: 0.9;
-  font-weight: 900;
-  letter-spacing: -3px;
-  text-transform: uppercase;
-}
-
-.accroche-joueur {
-  margin: 22px 0;
-  color: var(--or);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.presentation-texte > p:last-child {
-  color: #c3c5c3;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.presentation-image {
-  position: relative;
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  min-height: 480px;
-}
-
-.presentation-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  max-height: 600px;
-  object-fit: contain;
-  object-position: center bottom;
-  filter: drop-shadow(0 10px 35px rgb(0 0 0 / 55%));
-}
-
-.statistiques-rapides {
-  z-index: 1;
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid rgb(232 173 39 / 35%);
-  border-bottom: 1px solid rgb(232 173 39 / 20%);
-}
-
-.statistiques-rapides p {
-  margin: 0;
-  padding: 22px 14px;
-  color: var(--texte-secondaire);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-align: center;
-}
-
-.statistiques-rapides p + p {
-  border-left: 1px solid rgb(255 255 255 / 12%);
-}
-
-.statistiques-rapides strong {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--or);
-  font-size: 30px;
-  letter-spacing: 0;
-}
-.navigation-joueur {
-  display: flex;
-  gap: clamp(0.75rem, 4vw, 6rem);
-  margin: 24px 0;
-  border-bottom: 1px solid #444;
-}
-
-.onglet {
-  padding: 10px 16px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
   border: none;
   background: transparent;
-  color: #aaa;
-  font-size: 1rem;
   cursor: pointer;
 }
 
-.onglet:hover {
-  color: white;
+#bouton-musique img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.onglet.actif {
-  color: white;
-  border-bottom: 2px solid #fff;
-}
+/* =========================================================
+   TABLETTE / DESKTOP (>= 768px)
+   ========================================================= */
 
-.contenu-onglet {
-  padding: 20px 0;
-}
+@media (min-width: 768px) {
 
-.contenu-onglet[hidden] {
-  display: none;
+  /* le header et le footer reviennent */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    background-color: black;
+  }
+
+  /* hero en 2 colonnes, photo en fond */
+  .presentation-joueur {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(480px, auto) auto;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 70px 7%;
+    background:
+      url("cr7.png") center / cover no-repeat,
+      radial-gradient(ellipse at 75% 35%, #20292c 0, transparent 45%),
+      linear-gradient(120deg, #05090b, #0b1114);
+  }
+
+  .presentation-joueur::before {
+    display: none;
+  }
+
+  .presentation-texte {
+    position: static;
+    z-index: 1;
+    align-self: center;
+    justify-content: flex-start;
+    min-height: 0;
+    max-width: 560px;
+    padding: 0;
+  }
+
+  .fil-ariane {
+    position: static;
+    margin: 0 0 55px;
+  }
+
+  .fil-ariane a {
+    display: inline;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .fil-ariane a::before {
+    content: none;
+  }
+
+  .fil-suite {
+    display: inline;
+  }
+
+  .presentation-texte h1 {
+    font-size: clamp(48px, 7vw, 94px);
+    letter-spacing: -3px;
+  }
+
+  .accroche-joueur {
+    margin: 22px 0;
+  }
+
+  .presentation-texte > p:last-child {
+    color: #c3c5c3;
+    line-height: 1.8;
+  }
+
+  /* stats : 4 colonnes */
+  .statistiques-rapides {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgb(232 173 39 / 35%);
+    border-bottom: 1px solid rgb(232 173 39 / 20%);
+  }
+
+  .statistiques-rapides p {
+    padding: 22px 14px;
+    border-top: 0;
+  }
+
+  .statistiques-rapides p + p {
+    border-left: 1px solid rgb(255 255 255 / 12%);
+  }
+
+  /* onglets centrés, lien retour dans la barre */
+  .navigation-joueur {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding: 0 20px;
+  }
+
+  .navigation-joueur .onglet {
+    flex: 0 0 auto;
+    display: inline-block;
+    min-height: 0;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  .navigation-joueur .onglet-retour {
+    display: inline-block;
+  }
+
+  .contenu-onglet {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px;
+  }
+
+  #galerie:not([hidden]) {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+
+  #galerie h2 {
+    margin-bottom: 10px;
+  }
+
+  #galerie img {
+    transition: transform 0.2s ease;
+  }
+
+  #galerie img:hover {
+    transform: scale(1.03);
+  }
+
+  /* le bouton du bas n'est utile que sur mobile */
+  .bouton-retour {
+    display: none;
+  }
 }

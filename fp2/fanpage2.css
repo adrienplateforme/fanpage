@@ -113,7 +113,7 @@ body {
   padding: 70px 7%;
   overflow: hidden;
   background:
-    url("mbappe.png") center / cover no-repeat,
+    url("cr7.png") center / cover no-repeat,
     radial-gradient(ellipse at 75% 35%, #20292c 0, transparent 45%),
     linear-gradient(120deg, #05090b, #0b1114);
 }

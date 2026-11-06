@@ -1,0 +1,341 @@
+header h3,
+header section {
+    flex: 1;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.logo-titre {
+  margin: 0;
+  color: white;
+  font-size: 1.4rem;
+  line-height: 0.85;
+}
+
+.logo-titre span {
+  display: inline-block;
+  margin-left: 0.35em;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex: 0 0 auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+nav a:nth-child(2) {
+    color: yellow;
+}
+
+header section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+#texte-musique {
+    color: white;
+    font-size: 1.05rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#action-musique {
+    color: yellow;
+}
+
+#bouton-musique {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#bouton-musique img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+main {
+  --fond: #000000;
+  --fond-secondaire: #ffffff;
+  --texte: #ffffff;
+  --texte-secondaire: #ffffff;
+  --or: #ffd21f;
+
+  background-color: var(--fond);
+  color: var(--texte);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.presentation-joueur {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(480px, auto) auto;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 70px 7%;
+  overflow: hidden;
+  background:
+    url("cr7.png") center / cover no-repeat,
+    radial-gradient(ellipse at 75% 35%, #20292c 0, transparent 45%),
+    linear-gradient(120deg, #05090b, #0b1114);
+}
+
+.presentation-texte {
+  z-index: 1;
+  align-self: center;
+  max-width: 560px;
+}
+
+.fil-ariane {
+  margin: 0 0 55px;
+  color: var(--texte-secondaire);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.presentation-surnom {
+  margin: 0 0 14px;
+  color: var(--or);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.presentation-texte h1 {
+  margin: 0;
+  font-size: clamp(48px, 7vw, 94px);
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+}
+
+.accroche-joueur {
+  margin: 22px 0;
+  color: var(--or);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.presentation-texte > p:last-child {
+  color: #c3c5c3;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.presentation-image {
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  min-height: 480px;
+}
+
+.presentation-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 10px 35px rgb(0 0 0 / 55%));
+}
+
+.statistiques-rapides {
+  z-index: 1;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgb(232 173 39 / 35%);
+  border-bottom: 1px solid rgb(232 173 39 / 20%);
+}
+
+.statistiques-rapides p {
+  margin: 0;
+  padding: 22px 14px;
+  color: var(--texte-secondaire);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.statistiques-rapides p + p {
+  border-left: 1px solid rgb(255 255 255 / 12%);
+}
+
+.statistiques-rapides strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--or);
+  font-size: 30px;
+  letter-spacing: 0;
+}
+.navigation-joueur {
+  display: flex;
+  gap: clamp(0.75rem, 4vw, 6rem);
+  margin: 24px 0;
+  border-bottom: 1px solid #444;
+}
+
+.onglet {
+  padding: 10px 16px;
+  border: none;
+  background: transparent;
+  color: #aaa;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.onglet:hover {
+  color: white;
+}
+
+.onglet.actif {
+  color: white;
+  border-bottom: 2px solid #fff;
+}
+
+.contenu-onglet {
+  padding: 20px 0;
+}
+
+.contenu-onglet[hidden] {
+  display: none;
+}
+.navigation-joueur {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 1100px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+  border-bottom: 1px solid #333;
+}
+
+/* Boutons et lien partagent le même style */
+.navigation-joueur .onglet {
+  display: inline-block;
+  padding: 14px 20px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #aaa;
+  font: inherit;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.navigation-joueur .onglet:hover {
+  color: #fff;
+}
+
+/* Onglet sélectionné */
+.navigation-joueur .onglet.actif {
+  border-bottom-color: #ffd21f;
+  color: #ffd21f;
+}
+
+/* Contenu des sections */
+.contenu-onglet {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.contenu-onglet[hidden] {
+  display: none;
+}
+
+/* Images dans les sections */
+.contenu-onglet > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* Galerie */
+#galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+#galerie h2 {
+  grid-column: 1 / -1;
+  margin: 0 0 10px;
+  color: #ffd21f;
+}
+
+#galerie img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+#galerie img:hover {
+  transform: scale(1.03);
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 600px) {
+  .navigation-joueur {
+    gap: 0;
+  }
+
+  .navigation-joueur .onglet {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+  }
+
+  .contenu-onglet {
+    padding: 24px 16px;
+  }
+}
