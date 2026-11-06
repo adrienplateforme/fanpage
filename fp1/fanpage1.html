@@ -7,43 +7,102 @@
     <title>Fan Page 1 - Adri</title>
 
     <link rel="stylesheet" href="fanpage1.css" />
-    <script src="fanepage1.js" defer></script>
+    <script src="fanpage1.js" defer></script>
   </head>
 
   <body>
     <header>
-
-      <h1>CRISTIANO RONALDO</h1>
+      
+      <h3 class="logo-titre">The ONLY<br><span>True FANS</span></h3>
       
       <nav>
-        <a href="../index.html">Page d'accueil</a>
-        <a href="./fanpage1.html">Page de fan 1</a>
-        <a href="../fp2/fanpage2.html">Page de fan 2</a>
-        <a href="../fp3/fanpage3.html">Page de fan 3</a>
+        <a href="../index.html">ACCUEIL</a>
+        <a href="fanpage1.html">RONALDO</a>
+        <a href="../fp2/fanpage2.html">MBAPPÉ</a>
+        <a href="../fp3/fanpage3.html">HAALAND</a>
       </nav>
 
       <section>
+
+        <span id="texte-musique">
+          <span id="action-musique">Activer</span> le son
+        </span>
+        
         <button id="bouton-musique" type="button" aria-label="Activer le son">
-      ▶️
+          <img src="../play.png" alt="bouton play">
         </button>
 
-        <audio id="vh-jump" preload="none">
-          <source src="Van Halen - Jump (Official Music Video).mp3" type="audio/mpeg"> <!-- type audio/mpeg => .mp3-->
+        <audio id="uefa" preload="none">
+          <source src="../UEFA Champions League Anthem.mp3" type="audio/mpeg">
         </audio>
       </section>
 
-
     </header>
 
-    <main></main>
+    <main>
+  <section class="presentation-joueur">
+    <div class="presentation-texte">
+      <p class="fil-ariane">ACCUEIL > CRISTIANO RONALDO</p>
+
+      <p class="presentation-surnom">
+        LE JOUEUR QUI A MARQUÉ PLUSIEURS GÉNÉRATIONS
+      </p>
+
+      <h1>CRISTIANO<br>RONALDO</h1>
+
+      <p class="accroche-joueur">
+        LA DISCIPLINE. LE TRAVAIL. LA LÉGENDE.
+      </p>
+
+      <p>
+        De Madère au sommet du football mondial,<br>
+        l’histoire d’un joueur qui a repoussé toutes les limites.
+      </p>
+    </div>
+
+    <div class="statistiques-rapides">
+      <p><strong>980+</strong> BUTS EN CARRIÈRE</p>
+      <p><strong>1 300+</strong> MATCHS JOUÉS</p>
+      <p><strong>5</strong> BALLONS D’OR</p>
+      <p><strong>35</strong> TROPHÉES</p>
+    </div>
+  </section>
+
+  </section>
+<nav class="navigation-joueur" aria-label="Sections du joueur">
+  <button type="button" class="onglet actif" data-section="parcours">Parcours</button>
+  <button type="button" class="onglet" data-section="palmares">Palmarès</button>
+  <button type="button" class="onglet" data-section="stats">Stats</button>
+  <button type="button" class="onglet" data-section="galerie">Galerie</button>
+</nav>
+
+<section class="contenu-onglet actif" id="parcours">
+  <img src="parcours.png" alt="la liste des clubs depuis ses debuts">
+</section>
+
+<section class="contenu-onglet" id="palmares" hidden>
+  <h2>Palmarès</h2>
+  <p>On ajoutera ici ses titres et récompenses.</p>
+</section>
+
+<section class="contenu-onglet" id="stats" hidden>
+  <h2>Statistiques</h2>
+  <p>On ajoutera ici ses statistiques.</p>
+</section>
+
+<section class="contenu-onglet" id="galerie" hidden>
+  <h2>Galerie</h2>
+  <p>On ajoutera ici ses photos.</p>
+</section>
+</main>
     
     <footer>
       
       <nav>
-        <a href="../index.html">Page d'accueil</a>
-        <a href="./fanpage1.html">Page de fan 1</a>
-        <a href="../fp2/fanpage2.html">Page de fan 2</a>
-        <a href="../fp3/fanpage3.html">Page de fan 3</a>
+        <a href="../index.html">ACCUEIL</a>
+        <a href="fanpage1.html">RONALDO</a>
+        <a href="../fp2/fanpage2.html">MBAPPÉ</a>
+        <a href="../fp3/fanpage3.html">HAALAND</a>
       </nav>
     </footer>
   </body>
