@@ -4,37 +4,106 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Fan Page 2 - Ilyess</title>
+    <title>Fan Page 1 - Adri</title>
 
-    <link rel="stylesheet" href="fanpage2.css" />
-    <script src="fanepage2.js" defer></script>
+    <link rel="stylesheet" href="fanpage1.css" />
+    <script src="fanpage1.js" defer></script>
   </head>
 
   <body>
     <header>
-
-      <h1>La Super Star n°2</h1>
+      
+      <h3 class="logo-titre">The ONLY<br><span>True FANS</span></h3>
       
       <nav>
-        <a href="../index.html">Page d'accueil</a>
-        <a href="../fp1/fanpage1.html">Page de fan 1</a>
-        <a href="./fanpage2.html">Page de fan 2</a>
-        <a href="../fp3/fanpage3.html">Page de fan 3</a>
+        <a href="../index.html">ACCUEIL</a>
+        <a href="fanpage1.html">RONALDO</a>
+        <a href="../fp2/fanpage2.html">MBAPPÉ</a>
+        <a href="../fp3/fanpage3.html">HAALAND</a>
       </nav>
+
+      <section>
+
+        <span id="texte-musique">
+          <span id="action-musique">Activer</span> le son
+        </span>
+        
+        <button id="bouton-musique" type="button" aria-label="Activer le son">
+          <img src="../play.png" alt="bouton play">
+        </button>
+
+        <audio id="uefa" preload="none">
+          <source src="../UEFA Champions League Anthem.mp3" type="audio/mpeg">
+        </audio>
+      </section>
 
     </header>
 
-    <main></main>
+    <main>
+  <section class="presentation-joueur">
+    <div class="presentation-texte">
+      <p class="fil-ariane">ACCUEIL > KYLIAN MBAPPE</p>
+
+      <p class="presentation-surnom">
+        LE JOUEUR QUI A MARQUÉ LA NOUVELLE GENERATION
+      </p>
+
+      <h1>KYLIAN<br>MBAPPE</h1>
+
+      <p class="accroche-joueur">
+        LA VITESSE. LE TALENT. L'EFFICACITE.
+      </p>
+
+      <p>
+        De Bondy au sommet du football mondial,<br>
+        l’histoire d’un joueur qui a repoussé toutes les limites.
+      </p>
+    </div>
+
+    <div class="statistiques-rapides">
+      <p><strong>980+</strong> BUTS EN CARRIÈRE</p>
+      <p><strong>1 300+</strong> MATCHS JOUÉS</p>
+      <p><strong>5</strong> MEUILLEUR BUTEUR DE LA LDC</p>
+      <p><strong>35</strong> COUPE DU MONDE</p>
+    </div>
+  </section>
+
+  </section>
+<nav class="navigation-joueur" aria-label="Sections du joueur">
+  <button type="button" class="onglet actif" data-section="parcours">Parcours</button>
+  <button type="button" class="onglet" data-section="palmares">Palmarès</button>
+  <button type="button" class="onglet" data-section="stats">Stats</button>
+  <button type="button" class="onglet" data-section="galerie">Galerie</button>
+</nav>
+
+<section class="contenu-onglet actif" id="parcours">
+  <img src="parcours.png" alt="la liste des clubs depuis ses debuts">
+</section>
+
+<section class="contenu-onglet" id="palmares" hidden>
+  <h2>Palmarès</h2>
+  <p>On ajoutera ici ses titres et récompenses.</p>
+</section>
+
+<section class="contenu-onglet" id="stats" hidden>
+  <h2>Statistiques</h2>
+  <p>On ajoutera ici ses statistiques.</p>
+</section>
+
+<section class="contenu-onglet" id="galerie" hidden>
+  <h2>Galerie</h2>
+  <p>On ajoutera ici ses photos.</p>
+</section>
+</main>
     
     <footer>
       
       <nav>
-        <a href="../index.html">Page d'accueil</a>
-        <a href="../fp1/fanpage1.html">Page de fan 1</a>
-        <a href="./fanpage2.html">Page de fan 2</a>
-        <a href="../fp3/fanpage3.html">Page de fan 3</a>
+        <a href="../index.html">ACCUEIL</a>
+        <a href="fanpage1.html">RONALDO</a>
+        <a href="../fp2/fanpage2.html">MBAPPÉ</a>
+        <a href="../fp3/fanpage3.html">HAALAND</a>
       </nav>
-
     </footer>
   </body>
 </html>
